@@ -1,16 +1,15 @@
-from django.shortcuts import render
-from django.http import HttpResponse,JsonResponse
-from rest_framework.response import Response
-from rest_framework.decorators import api_view
 from .models import *
-from .serializers import ArticleSerializer
+from .serializers import *
+from rest_framework.viewsets import ModelViewSet
 
-@api_view(['GET'])
-def index(request):
-  articles = Article.objects.all()
-  resp = ArticleSerializer(articles,many=True)
-  return Response(resp.data)
+class BlogView(ModelViewSet):
+  serializer_class = ArticleSerializer
+  queryset = Article.objects.all()
 
-def bring_up(request):
-  article = Article.objects.get(id= 1)
-  return HttpResponse(article.blog_comment.all())
+class BlogCommentView(ModelViewSet):
+  serializer_class = CommentSerializer
+  queryset = Comment.objects.all()
+
+class BlogTagView(ModelViewSet):
+  serializer_class = BlogTagSerializer
+  queryset = Comment.objects.all()
