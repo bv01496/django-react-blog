@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Della+Respira&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Redressed&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1400px;
+}
+.navbar{
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 6px 2px 4px 8px rgba(36, 9, 9, 0.2);
+  /* z-index: 999; */
+}
+.navbar > *{
+  margin: .7em;
+}
+#logo{
+  font-size: 30px;
+  background: -webkit-linear-gradient(rgb(244, 248, 224), rgb(80, 49, 49));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'Della Respira', serif;
+}
+.search-box{
+  position: relative;
+}
+.search-group{
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .7s ease-out;
+}
+#search{
+  position: absolute;
+  right: -100px;
+  font-size: 20px;
+  width: 300px;
+  height: 55px;
+  border-radius: 30px;
+  border:none;
+  padding: 1em;
+  /* z-index: 0; */
+}
+.search-button{
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  background-color: rgb(79, 79, 207);
+  /* z-index: 999; */
+  border: none;
+  height: 55px;
+  transform: translate(100px);
+}
+.search-button:focus{
+  outline: none;
+}
+.search-box:hover > .search-group{
+  visibility: visible;
+  opacity: 1;
+}
+#search:hover{
+  visibility: visible;
+  opacity: 1;
+}
+.search-box box-icon{
+  transition: transform .2s ease-in;
+}
+.search-box:hover > box-icon{
+  transform: translate(150px);
+}
+#search:focus{
+  outline: none;
+  visibility:visible;
+  opacity: 1;
+}
+#search:focus + box-icon{
+  transform: translate(150px);
+  background-color: aqua;
+}
+.social-media > a{
+  margin: 1em;
+}
+
+.hero{
+  position: relative;
+  padding-top: 70px;
+  height: 25em;
+  z-index: -999;
+  background: #5f2c82; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #5f2c82, #49a09d); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #5f2c82, #49a09d); 
+}
+.greet{
+  font-family: 'Della Respira', serif;
+  font-size: 50px;
+  color: aliceblue;
+  text-shadow: 5px 6px 5px grey;
+}
+.hero >center > p{
+  font-family:sans-serif;
+  color: rgb(243, 237, 237);
+}

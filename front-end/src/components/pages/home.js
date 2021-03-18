@@ -1,26 +1,37 @@
 import React from 'react'
-import {useState,useEffect} from 'react'
+import 'boxicons'
+import Articles from "./Articles"
 
 const Home = () => {
-  const[articles,setArticles] = useState([])
-  useEffect(()=>{
-     fetch('http://127.0.0.1:8000/blogs/')
-    .then((resp)=>resp.json())
-    .then((data)=>{
-      setArticles(data)
-      console.log(data);
-    })
-  },[])
+
 
   return (
-    <div>
-      {articles.map((article)=>(
-        <div class="article">
-          <p>{article.title}</p>
-          <p>{article.author.name}</p>
-        </div>
-      ))}
+    <>
+    <nav className="navbar container">
+      <h2 id="logo" >SPECTA-DOR</h2>
+      <div className="search-box">
+      <box-icon color="white" className="search-icon" size="lg" name='search-alt' ></box-icon>
+      <span className="search-group">
+      <input id="search"/>
+      <button className="search-button"><box-icon color="white" size="lg" name='search-alt' ></box-icon></button>
+      </span>
+      </div>
+      <div className="social-media">
+        <a href="www.facebook.com"><box-icon color="white" size="lg" type='logo' name='facebook-circle'></box-icon></a>
+        <a><box-icon color="white" size="lg" name='twitter' type='logo' ></box-icon></a>
+        <a><box-icon color="white" size="lg" name='whatsapp' type='logo' ></box-icon></a>
+      </div>
+    </nav>
+    <section className="hero container">
+      <center>
+      <h1 className="greet">hi welcome back to<br/> SPECTA-DOR</h1><br/>
+      <p>---- in here you will get latest news of every genere you would ever think of ----</p>
+      </center>
+    </section>
+    <div className="articles">
+      <Articles/>
     </div>
+    </>
   )
 }
 

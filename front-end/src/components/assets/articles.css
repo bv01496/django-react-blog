@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+.article-section{
+  position: relative;
+  /* display: flex; */
+  /* flex-direction: row; */
+}
+.article-list{
+  position: absolute;
+  top: 20%;
+  left: 10%;
+}
+.card{
+  width: 500px;
+  /* height: 300px; */
+  display: flex;
+  flex-direction: row;
+  padding: 1em;
+  margin-top: 2em;
+  box-shadow: 6px 6px 10px gray;
+  transition: all .3s ease-in;
+}
+.card:hover{
+  transform: scale(1.03);
+  background-color: rgb(227, 227, 227);
+}
+.card-img{
+  width: 200px;
+  height: 200px;
+}
+.card-content{
+  padding: 1em;
+}
+.title{
+  color: orangered;
+  font-family: 'Cabin', sans-serif;
+}
+.content-tumbnile{
+  font-family: 'Cabin', sans-serif;
+  color: rgb(77, 76, 76);
+}
+.top-blogs{
+  position: absolute;
+  right : 5%;
+  top: 2em;
+  color: rgb(107, 107, 181) ;
+  font-size: 1.2em;
+}
+.top-blogs > h1 {
+  text-shadow: 2px 2px 5px gray;
+  font-family:  'Cabin', sans-serif;
+}
+.top-card{
+   width: 400px;
+  font-size: medium;
+  display: flex;
+  flex-direction: row;
+  padding: .5em;
+  margin-top: .5em;
+  box-shadow: 3px 3px 5px gray;
+  transition: all .3s ease-in; 
+}
+.top-card-img{
+  width: 120px;
+  height: 120px;
+}

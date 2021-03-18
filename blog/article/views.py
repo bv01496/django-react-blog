@@ -1,7 +1,9 @@
 from .models import *
 from .serializers import *
 from rest_framework.viewsets import ModelViewSet
-
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
+from django.http import JsonResponse
 class BlogView(ModelViewSet):
   serializer_class = ArticleSerializer
   queryset = Article.objects.all()
@@ -13,3 +15,9 @@ class BlogCommentView(ModelViewSet):
 class BlogTagView(ModelViewSet):
   serializer_class = BlogTagSerializer
   queryset = Comment.objects.all()
+
+@api_view(["GET"])
+def top_blogs(request):
+  top_articles = Article.objects.filter(is_trending=True)
+  serializer = ArticleSerializer(top_articles,many=True)
+  return Response(serializer.data)
