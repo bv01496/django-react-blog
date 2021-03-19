@@ -1,6 +1,8 @@
 import React from 'react'
 import 'boxicons'
 import Articles from "./Articles"
+import By_author from "./by_author"
+import {BrowserRouter,Route, Switch} from 'react-router-dom'
 
 const Home = () => {
 
@@ -27,9 +29,18 @@ const Home = () => {
       <h1 className="greet">hi welcome back to<br/> SPECTA-DOR</h1><br/>
       <p>---- in here you will get latest news of every genere you would ever think of ----</p>
       </center>
+      
     </section>
     <div className="articles">
-      <Articles/>
+      <BrowserRouter>
+      <Switch>
+      <Route path="/" exact component={Articles}/>
+      </Switch>
+      <Switch>
+        <Route path={`/by/:author`} exact component={By_author}/>
+      </Switch>
+
+      </BrowserRouter>
     </div>
     </>
   )

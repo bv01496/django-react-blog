@@ -10,7 +10,8 @@
   left: 10%;
 }
 .card{
-  width: 500px;
+  width: 45%;
+  position: relative;
   /* height: 300px; */
   display: flex;
   flex-direction: row;
@@ -24,8 +25,8 @@
   background-color: rgb(227, 227, 227);
 }
 .card-img{
-  width: 200px;
-  height: 200px;
+  width: 40%;
+  height: 80%;
 }
 .card-content{
   padding: 1em;
@@ -37,6 +38,12 @@
 .content-tumbnile{
   font-family: 'Cabin', sans-serif;
   color: rgb(77, 76, 76);
+  text-decoration: none;
+}
+.author{
+  position: absolute;
+  bottom: .5em;
+  right: .5em;
 }
 .top-blogs{
   position: absolute;
@@ -50,6 +57,7 @@
   font-family:  'Cabin', sans-serif;
 }
 .top-card{
+  position: relative;
    width: 400px;
   font-size: medium;
   display: flex;

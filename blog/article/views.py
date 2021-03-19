@@ -21,3 +21,10 @@ def top_blogs(request):
   top_articles = Article.objects.filter(is_trending=True)
   serializer = ArticleSerializer(top_articles,many=True)
   return Response(serializer.data)
+
+
+@api_view(["GET"])
+def by_author(request,slug):
+  articles = Article.objects.filter(author=slug)
+  serializer = ArticleSerializer(articles, many=True)
+  return Response(serializer.data)

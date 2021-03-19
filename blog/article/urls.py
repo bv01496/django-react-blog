@@ -3,7 +3,7 @@ from .views import BlogTagView,BlogCommentView,BlogView
 from rest_framework.routers import DefaultRouter
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import top_blogs
+from .views import top_blogs,by_author
 
 router = DefaultRouter()
 router.register('blogs', BlogView)
@@ -12,5 +12,6 @@ router.register('blog-tags', BlogTagView)
 
 urlpatterns = [
     path("",include(router.urls)),
-    path("top-blogs",top_blogs,name="top_blogs")
+    path("top-blogs", top_blogs, name="top_blogs"),
+    path("by/<slug>", by_author, name="by_author"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

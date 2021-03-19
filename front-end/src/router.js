@@ -1,5 +1,6 @@
 import React from 'react'
-import {BrowserRouter,Route,Router, Switch} from 'react-router-dom'
+import {BrowserRouter,Route, Switch} from 'react-router-dom'
+import Articles from './components/pages/Articles'
 import Home from "./components/pages/home"
 const Router_component = () => {
   return (

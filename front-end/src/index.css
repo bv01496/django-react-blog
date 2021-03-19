@@ -87,7 +87,7 @@
 .hero{
   position: relative;
   padding-top: 70px;
-  height: 25em;
+  height: 20em;
   z-index: -999;
   background: #5f2c82; /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #5f2c82, #49a09d); /* Chrome 10-25, Safari 5.1-6 */
