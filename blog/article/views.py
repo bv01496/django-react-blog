@@ -12,6 +12,13 @@ class BlogCommentView(ModelViewSet):
   serializer_class = CommentSerializer
   queryset = Comment.objects.all()
 
+@api_view(['GET'])
+def article_comments(request,id):
+  comments = Comment.objects.filter(post=id)
+  serializer = CommentSerializer(comments,many=True)
+  return Response(serializer.data)
+
+
 class BlogTagView(ModelViewSet):
   serializer_class = BlogTagSerializer
   queryset = Comment.objects.all()

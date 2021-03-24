@@ -19,11 +19,12 @@ const By_author = () => {
   return (
     <>
     <div className="article-section container">
-      <section className="article-list">
+      <h1 className="author-name" >Articles by - {author}</h1>
+      <section  className="article-list2" style={{display: "grid", gridTemplateColumns: "auto auto",gridGap: "30px"}}>
       {articles.map((article)=>(
-        <Link to="/ppp"  style={{ textDecoration: 'none' }}>
-        <div className="card" key={article.id}>
-          <img className="card-img" src={"http://127.0.0.1:8000"+article.image} alt=""/>
+        <Link key={article.id} to={`/blogs/${article.id}`}  style={{ textDecoration: 'none' }}>
+        <div className="card" style={{width: "95%",height:"200px"}} key={article.id}>
+          <img className="card-img2" src={"http://127.0.0.1:8000"+article.image} alt=""/>
           <div className="card-content">
           <p className="title">{truncate(article.title,35)}</p><br/>
           <p className="content-tumbnile">{truncate(article.content,150)}</p>

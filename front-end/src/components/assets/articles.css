@@ -1,13 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
 .article-section{
   position: relative;
+  height: 1350px;
   /* display: flex; */
   /* flex-direction: row; */
+  /* overflow-x: hidden; */
+}
+.article-section > h1 {
+  position: absolute;
+  left: 35%;
+  top: 1.5em;
+  color: rgb(94, 91, 91);
+  font-family: 'Cabin', sans-serif ;
+  font-size: 50px;
+  padding: .3em;
+  text-shadow:  5px 6px 10px rgb(119, 117, 121);
+  border: 2px solid rgb(79, 81, 84);
 }
 .article-list{
   position: absolute;
-  top: 20%;
-  left: 10%;
+  top: -20px;
+  left: 5%;
+}
+.article-list2{
+  position: absolute;
+  margin-top: 150px;
+  left: 5%;
+}
+.article-list::after{
+  display: block;
+  position: absolute;
+  top: 2%;
+  left: 52%;
+  content: "";
+  height: 100%;
+  width: 1%;
+  box-shadow: -4px 0px 10px gray;
+  background-color: rgb(104, 147, 147);
 }
 .card{
   width: 45%;
@@ -23,19 +52,30 @@
 .card:hover{
   transform: scale(1.03);
   background-color: rgb(227, 227, 227);
+  /* height: 400px; */
 }
 .card-img{
-  width: 40%;
-  height: 80%;
+  width: 200px;
+  height: 200px;
+  max-width: 40%;
+  object-fit: cover;
+  /* max-width: 100%;   */
+}
+.card-img2{
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  /* max-width: 100%;   */
 }
 .card-content{
-  padding: 1em;
+  padding: .5em;
 }
 .title{
   color: orangered;
   font-family: 'Cabin', sans-serif;
 }
 .content-tumbnile{
+
   font-family: 'Cabin', sans-serif;
   color: rgb(77, 76, 76);
   text-decoration: none;
@@ -46,11 +86,30 @@
   right: .5em;
 }
 .top-blogs{
-  position: absolute;
-  right : 5%;
-  top: 2em;
+  position: sticky;
+  /* position: -webkit-sticky; */
+  /* right : 5%; */
+  /* padding-right: 0; */
+  /* background-color: rgb(233, 227, 182); */
+  height: 80vh;
+  max-height: 600px;
+  max-width: 37%;
+  margin-top: 20px;
+  top: 80px;
+  margin-left: 60%;
   color: rgb(107, 107, 181) ;
   font-size: 1.2em;
+  transition: all .5s ease-in-out;
+  /* filter: brightness(.7); */
+  opacity: .7;
+}
+.black{
+  /* background-color: rgb(229, 167, 157); */
+}
+.white{
+  /* background-color: rgb(181, 180, 186); */
+  transform: scale(1.04);
+  opacity: 1;
 }
 .top-blogs > h1 {
   text-shadow: 2px 2px 5px gray;
@@ -58,7 +117,8 @@
 }
 .top-card{
   position: relative;
-   width: 400px;
+  width: 100%;
+  height: 28%;
   font-size: medium;
   display: flex;
   flex-direction: row;
@@ -70,4 +130,13 @@
 .top-card-img{
   width: 120px;
   height: 120px;
+  max-height: 90%;
+  object-fit: cover;
+}
+.top-title{
+  font-size: 16px;
+}
+.top-content{
+  /* padding: em; */
+
 }

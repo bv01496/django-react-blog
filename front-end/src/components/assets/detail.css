@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap');
+
+.post-container >img {
+  grid-area: image;
+}
+.post-container > .post-title {
+  grid-area: title;
+}
+.post-container > .arti{
+  grid-area: cont;
+}
+.post-container{
+  background-color: rgb(241, 236, 236);
+  /* margin: 1em; */
+  border: 1px solid black;
+  padding: 70px 2em 2em 2em;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns:  1fr 1fr 1fr;
+  grid-template-areas: 
+  "title title ."
+  "image image ."
+  "cont cont .";
+  /* "cont cont cont"; */
+}
+.post-container > img{
+  /* grid-row: 1/3; */
+  /* width: 100%;
+  height: 100%; */
+  border: 3px solid rgb(178, 175, 175);
+  width: 100%;
+}
+.post-container > .post-title >p{
+  font-size: 50px;
+  margin-bottom:-10px;
+  /* display: flex; */
+  /* grid-column: 2/4; */
+  /* justify-content: center; */
+  font-family: 'Della Respira', serif;
+  font-weight: 900;
+  color: rgb(118, 92, 92);
+  /* font-family: 'Inter', sans-serif; */
+}
+
+.shares > box-icon{
+  margin: .5em ;
+  color: rgb(68, 68, 125);
+}
+.post-container > .arti {
+  padding: 2em 1em 2em 1em;
+  /* grid-column: 2/4;
+  grid-row: 2/3; */
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.post-header{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  
+}
+.comment-section{
+  position: relative;
+}
+.comment-section >form{
+  position: absolute;
+  left: 30%;
+}
+.comment-submit{
+  width: 6em;
+  height: 3em;
+  border-radius: 5px;
+  margin-left: .5em;
+  background-color: rgb(214, 107, 107);
+  border: none;
+  color: white;
+}
+
+#add-comment{
+  border: none;
+  border-bottom: 2px solid black;
+  width: 18em;
+  height: 3em;
+  font-size: 1em;
+}
+#add-comment:focus{
+  outline: none;
+}
