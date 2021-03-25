@@ -23,7 +23,7 @@ const By_author = () => {
       <section  className="article-list2" style={{display: "grid", gridTemplateColumns: "auto auto",gridGap: "30px"}}>
       {articles.map((article)=>(
         <Link key={article.id} to={`/blogs/${article.id}`}  style={{ textDecoration: 'none' }}>
-        <div className="card" style={{width: "95%",height:"200px"}} key={article.id}>
+        <div className="author-card" key={article.id}>
           <img className="card-img2" src={"http://127.0.0.1:8000"+article.image} alt=""/>
           <div className="card-content">
           <p className="title">{truncate(article.title,35)}</p><br/>

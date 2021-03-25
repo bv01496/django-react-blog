@@ -18,7 +18,7 @@ const Detail = () => {
      await fetch(`http://127.0.0.1:8000/blogs/${id}`)
     .then((resp)=> resp.json())
     .then((data)=> setpost(data))
-    await fetch(`http://127.0.0.1:8000/comments/${id}`)
+    await fetch(`http://127.0.0.1:8000/blog-comments/${id}`)
     .then((resp)=>resp.json())
     .then((data)=> setcomments(data.map((obj)=>(
       obj.comment

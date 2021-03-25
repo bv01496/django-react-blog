@@ -17,6 +17,9 @@ class Article(models.Model):
   content = models.TextField()
   is_trending = models.BooleanField(default=False)
 
+  class Meta:
+    ordering = ['-created']
+
   def __str__(self):
       return self.title
   
@@ -25,6 +28,11 @@ class Comment(models.Model):
   post = models.ForeignKey(Article,on_delete=models.CASCADE,related_name="blog_comment")
   user = models.ForeignKey(User,on_delete=models.SET_DEFAULT,related_name="commented_user",default="Anonymous")
   comment = models.TextField()
+  created = models.DateTimeField(auto_now_add=True, null=True)
+
+  class Meta:
+    ordering = ['-created']
+
   def __str__(self):
     return (f"{self.user} commented on {self.post} post")
   

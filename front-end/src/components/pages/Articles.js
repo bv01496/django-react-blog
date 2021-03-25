@@ -1,4 +1,5 @@
 import React from 'react'
+import 'boxicons'
 import {useState,useEffect} from 'react'
 import '../assets/articles.css'
 import {Link} from 'react-router-dom'
@@ -9,7 +10,8 @@ const Articles = () => {
   const[articles,setArticles] = useState([])
   const[top_blogs,setTop_blogs] = useState([])
   document.addEventListener("scroll",()=>{
-    if (window.scrollY > 200 && window.scrollY < 1200){
+    console.log(window.scrollY);
+    if (window.scrollY > 300 && window.scrollY < 1200){
       setbg("white")    
     }else{
       setbg("black")
@@ -53,7 +55,7 @@ const Articles = () => {
       </section>
       <div className={`top-blogs ${bg}`}>
         <h1>TOP BLOGS</h1>
-        {top_blogs.map((article)=>(
+        {top_blogs.slice(0,3).map((article)=>(
         <Link to={`/blogs/${article.id}`} key={article.id} style={{ textDecoration: 'none' }}>
         <div className="top-card" key={article.id}>
           <img className="top-card-img" src={"http://127.0.0.1:8000"+article.image} alt=""/>
@@ -61,7 +63,7 @@ const Articles = () => {
           <p className="title top-title">{truncate(article.title,20)}</p><br/>
           <p className="content-tumbnile top-content">{truncate(article.content,70)}</p>
           </div>
-          <p className="author">-by <Link to={`/by/${article.author}`}>{article.author}</Link> </p>
+          <p className="top-author">-by <Link to={`/by/${article.author}`}>{article.author}</Link> </p>
         </div>
         </Link>
       ))}

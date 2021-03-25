@@ -2,13 +2,11 @@
 .article-section{
   position: relative;
   height: 1350px;
-  /* display: flex; */
-  /* flex-direction: row; */
-  /* overflow-x: hidden; */
 }
 .article-section > h1 {
   position: absolute;
-  left: 35%;
+  left: 50%;
+  transform: translate(-50%);
   top: 1.5em;
   color: rgb(94, 91, 91);
   font-family: 'Cabin', sans-serif ;
@@ -25,7 +23,7 @@
 .article-list2{
   position: absolute;
   margin-top: 150px;
-  left: 5%;
+  padding: 1em;
 }
 .article-list::after{
   display: block;
@@ -38,10 +36,9 @@
   box-shadow: -4px 0px 10px gray;
   background-color: rgb(104, 147, 147);
 }
-.card{
+.card, .author-card{
   width: 45%;
   position: relative;
-  /* height: 300px; */
   display: flex;
   flex-direction: row;
   padding: 1em;
@@ -49,26 +46,32 @@
   box-shadow: 6px 6px 10px gray;
   transition: all .3s ease-in;
 }
+.author-card{
+  width: 100%;
+  overflow: hidden;
+  max-height: 310px;
+}
 .card:hover{
   transform: scale(1.03);
   background-color: rgb(227, 227, 227);
-  /* height: 400px; */
 }
 .card-img{
   width: 200px;
   height: 200px;
   max-width: 40%;
+  min-width: 200px;
   object-fit: cover;
-  /* max-width: 100%;   */
 }
 .card-img2{
   width: 180px;
-  height: 180px;
+  height: 170px;
+  max-height: 170px;
   object-fit: cover;
-  /* max-width: 100%;   */
 }
 .card-content{
   padding: .5em;
+  height: 100%;
+  overflow: hidden;
 }
 .title{
   color: orangered;
@@ -80,49 +83,43 @@
   color: rgb(77, 76, 76);
   text-decoration: none;
 }
-.author{
+.author,.top-author{
   position: absolute;
   bottom: .5em;
   right: .5em;
 }
 .top-blogs{
   position: sticky;
-  /* position: -webkit-sticky; */
-  /* right : 5%; */
-  /* padding-right: 0; */
-  /* background-color: rgb(233, 227, 182); */
+  position: -webkit-sticky;
   height: 80vh;
   max-height: 600px;
   max-width: 37%;
   margin-top: 20px;
-  top: 80px;
+  top: 70px;
   margin-left: 60%;
   color: rgb(107, 107, 181) ;
   font-size: 1.2em;
   transition: all .5s ease-in-out;
-  /* filter: brightness(.7); */
   opacity: .7;
 }
-.black{
-  /* background-color: rgb(229, 167, 157); */
-}
 .white{
-  /* background-color: rgb(181, 180, 186); */
   transform: scale(1.04);
   opacity: 1;
 }
 .top-blogs > h1 {
   text-shadow: 2px 2px 5px gray;
   font-family:  'Cabin', sans-serif;
+  font-size: 30px;
 }
 .top-card{
   position: relative;
   width: 100%;
   height: 28%;
+  max-height: 150px;
   font-size: medium;
   display: flex;
   flex-direction: row;
-  padding: .5em;
+  padding: 1vw;
   margin-top: .5em;
   box-shadow: 3px 3px 5px gray;
   transition: all .3s ease-in; 
@@ -134,9 +131,41 @@
   object-fit: cover;
 }
 .top-title{
-  font-size: 16px;
+  font-size: 1.5vw;
 }
 .top-content{
-  /* padding: em; */
+  font-size: 1vw;
+}
+@media only screen and (max-width : 915px){
+  .card,.author-card{
+    flex-direction: column;
+    /* width: 300px; */
+  }
+  .card-img{
+    max-width: 100%;
+    min-width: 220px;
+    border-radius: 7px;
+    width: auto;
+    height: auto;
+  }
+  .card-img2{
+    max-width: 100%;
+    border-radius: 7px;
+    width: auto;
+    height: auto;
+  }
+  .top-content{
+    font-size: 1.5vw;
+  }
+  .top-author{
+    position: absolute;
+    font-size: 1.5vw;
+    right: .5em;
+    top: 2.5em;
+  }
+  .article-section >h1{
+    font-size: 5vw;
+    margin-top: 5vw;
+  }
 
 }
