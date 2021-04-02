@@ -3,6 +3,7 @@ import {useState,useEffect} from "react"
 import {Link, useParams} from "react-router-dom"
 import "../assets/detail.css"
 
+
 const Detail = () => {
   const{id} = useParams()
   const[post,setpost]= useState([])

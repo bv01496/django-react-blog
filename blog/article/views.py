@@ -3,9 +3,20 @@ from .serializers import *
 import sys
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view,authentication_classes,permission_classes
 from django.http import JsonResponse
 from rest_framework import status
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.models import User
+
+
+class Account(ModelViewSet):
+  serializer_class = UserSerializer
+  queryset = User.objects.all()
+  authentication_classes = [TokenAuthentication]
+  permission_classes=[]
+
 class BlogView(ModelViewSet):
   serializer_class = ArticleSerializer
   queryset = Article.objects.all()
@@ -41,3 +52,12 @@ def by_author(request,slug):
   articles = Article.objects.filter(author=slug)
   serializer = ArticleSerializer(articles, many=True)
   return Response(serializer.data)
+
+
+# @api_view(['GET'])
+# @authentication_classes([TokenAuthentication])
+# # @permission_classes([IsAuthenticated])
+# def example_view(request, format=None):
+#     content = User.objects.all()
+#     serializer = UserSerializer(content,many=True)
+#     return Response(serializer.data)

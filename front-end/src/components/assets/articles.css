@@ -98,7 +98,7 @@
   top: 70px;
   margin-left: 60%;
   color: rgb(107, 107, 181) ;
-  font-size: 1.2em;
+  /* font-size: 20px; */
   transition: all .5s ease-in-out;
   opacity: .7;
 }
@@ -134,7 +134,7 @@
   font-size: 1.5vw;
 }
 .top-content{
-  font-size: 1vw;
+  font-size: 15px;
 }
 @media only screen and (max-width : 915px){
   .card,.author-card{
